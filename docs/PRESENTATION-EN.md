@@ -18,6 +18,8 @@ Open **`!mvp`**, choose a song, equip an animated portrait and make your next MV
 
 The native panel uses deep teal, burgundy and gold, a calligraphic title and painted textures. Tabs, buttons, selections and the scrollable list are interactive. A separate pencil-inspired round banner displays the MVP player, selected song and portrait, signed **By pad7rar**.
 
+![PAD7RAR-MVP custom round banner](media/mvp-banner-en.png)
+
 ## Included features
 
 | Feature | What it provides |

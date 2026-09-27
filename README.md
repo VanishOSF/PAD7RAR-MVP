@@ -18,6 +18,8 @@ PAD7RAR-MVP le permite jucătorilor să aleagă melodia care se aude când câș
 
 Panoul combină nuanțe de petrol, bordo și auriu cu un titlu caligrafic și un fundal cu aspect pictat. Butoanele, taburile, selecțiile și lista cu derulare sunt interactive. Bannerul de final de rundă folosește un stil separat, inspirat de desenul în creion, cu semnătura **By pad7rar**.
 
+![Bannerul MVP personalizat PAD7RAR-MVP](docs/media/mvp-banner-ro.png)
+
 ## Ce include
 
 | Funcție | Ce poate face jucătorul sau administratorul |
