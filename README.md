@@ -10,6 +10,8 @@ Muzică MVP, portrete animate și un panou interactiv pentru Counter-Strike 2.
 
 **Prezentare video cu muzică:** [Română](docs/media/PAD7RAR-MVP-RO-music.mp4) · [English](docs/media/PAD7RAR-MVP-EN-music.mp4)
 
+![Bannerul MVP personalizat PAD7RAR-MVP](docs/media/mvp-banner-ro.png)
+
 *Prezentare a interfeței; materialul nu este o înregistrare din joc.*
 
 ## Fiecare MVP poate avea propria identitate
@@ -17,8 +19,6 @@ Muzică MVP, portrete animate și un panou interactiv pentru Counter-Strike 2.
 PAD7RAR-MVP le permite jucătorilor să aleagă melodia care se aude când câștigă MVP-ul rundei și animația care îi însoțește în banner. Selecțiile se fac dintr-un panou nativ în joc, deschis cu **`!mvp`**.
 
 Panoul combină nuanțe de petrol, bordo și auriu cu un titlu caligrafic și un fundal cu aspect pictat. Butoanele, taburile, selecțiile și lista cu derulare sunt interactive. Bannerul de final de rundă folosește un stil separat, inspirat de desenul în creion, cu semnătura **By pad7rar**.
-
-![Bannerul MVP personalizat PAD7RAR-MVP](docs/media/mvp-banner-ro.png)
 
 ## Ce include
 

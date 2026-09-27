@@ -10,6 +10,8 @@ Custom MVP music, animated portraits and an interactive in-game panel for Counte
 
 **Video presentation with music:** [English](media/PAD7RAR-MVP-EN-music.mp4) · [Română](media/PAD7RAR-MVP-RO-music.mp4)
 
+![PAD7RAR-MVP custom round banner](media/mvp-banner-en.png)
+
 *Interface presentation; this is not recorded gameplay.*
 
 ## Give every MVP a personal identity
@@ -17,8 +19,6 @@ Custom MVP music, animated portraits and an interactive in-game panel for Counte
 Open **`!mvp`**, choose a song, equip an animated portrait and make your next MVP moment your own. Music and GIF selections are independent, so players can combine their preferred anthem with their chosen animation.
 
 The native panel uses deep teal, burgundy and gold, a calligraphic title and painted textures. Tabs, buttons, selections and the scrollable list are interactive. A separate pencil-inspired round banner displays the MVP player, selected song and portrait, signed **By pad7rar**.
-
-![PAD7RAR-MVP custom round banner](media/mvp-banner-en.png)
 
 ## Included features
 
