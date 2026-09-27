@@ -3,7 +3,7 @@
 **Your round. Your signature.**  
 Muzică MVP, portrete animate și un panou interactiv pentru Counter-Strike 2.
 
-**Versiune: 0.3.2** · **By pad7rar**  
+**Versiune: 0.3.3** · **By pad7rar**  
 [GitHub](https://github.com/VanishOSF/PAD7RAR-MVP) · [Discord](https://discord.gg/FmGBPWTkDP) · [English](docs/PRESENTATION-EN.md)
 
 ![Panoul PAD7RAR-MVP](docs/media/panel-ro.png)
@@ -105,6 +105,8 @@ Urmează [ghidul bilingv de instalare](README.txt). La actualizare, păstrează 
 Pachetul nu include sursa C# a pluginului. Imaginea de prezentare și videoclipurile RO/EN sunt în `docs/media/`; colecția completă pentru site este păstrată separat.
 
 ## Versiunea 0.3.2
+
+**Actualizare 0.3.3:** corectează calea configurației pe instalări unde directorul jocului include deja `csgo`. Comanda de consolă `css_mvpconfig_status` arată fișierul folosit. [Instrucțiuni](docs/UPDATE-0.3.3.txt).
 
 Corecție pentru suprapunerea muzicii native CS2 cu melodia MVP custom. [Instrucțiuni de actualizare](docs/UPDATE-0.3.2.txt).
 

@@ -1,5 +1,5 @@
 PAD7RAR-MVP
-Version 0.3.2
+Version 0.3.3
 By pad7rar
 
 GitHub:  https://github.com/VanishOSF/PAD7RAR-MVP

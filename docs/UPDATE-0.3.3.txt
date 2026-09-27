@@ -1,0 +1,32 @@
+PAD7RAR-MVP 0.3.3 - CONFIG PATH
+
+RO
+Corecteaza dublarea segmentului csgo atunci cand CounterStrikeSharp returneaza
+deja game/csgo ca director al jocului. Configuratia noua se creeaza acum in:
+game/csgo/addons/counterstrikesharp/configs/plugins/PAD7RAR-MVP/config.toml
+
+Opreste serverul. Inlocuieste PAD7RAR-MVP.dll si PAD7RAR-MVP.deps.json din
+plugins/PAD7RAR-MVP. Pastreaza setarile si datele existente.
+Daca aveai configuratie in game/csgo/csgo/addons/counterstrikesharp/configs/plugins/,
+copiaza config.toml/config.json in locatia corecta inainte de restart.
+Nu suprascrie o configuratie existenta fara sa o verifici si sa pastrezi backup.
+Compatibilitatea cu folderul vechi de configuratie se pastreaza.
+
+Dupa restart ruleaza in consola SERVERULUI:
+css_mvpconfig_status
+Afiseaza versiunea, calea configuratiei si daca fisierul exista.
+Nu necesita actualizare Workshop.
+nyrium-custom.json este generat de aplicatia Nyrium si copiat pe server;
+nu este creat automat la pornirea pluginului.
+
+EN
+Fixes a duplicated csgo path when CounterStrikeSharp already returns game/csgo.
+Stop the server and replace PAD7RAR-MVP.dll and PAD7RAR-MVP.deps.json.
+Preserve configuration and player data. If settings were stored under the
+duplicated game/csgo/csgo path, copy them to the normal configs/plugins path
+before restart, without overwriting existing settings blindly.
+Run css_mvpconfig_status in the server console to inspect the resolved path.
+No Workshop update is needed. Nyrium custom catalogs still come from the builder.
+
+Validation: path normalization and legacy selection tests, Release build,
+and .NET assembly loading passed. Client server runtime still needs verification.

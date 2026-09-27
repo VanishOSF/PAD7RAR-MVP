@@ -3,7 +3,7 @@
 **Your round. Your signature.**  
 Custom MVP music, animated portraits and an interactive in-game panel for Counter-Strike 2.
 
-**Version 0.3.2 · By pad7rar**  
+**Version 0.3.3 · By pad7rar**  
 [GitHub](https://github.com/VanishOSF/PAD7RAR-MVP) · [Discord](https://discord.gg/FmGBPWTkDP) · [Română](../README.md)
 
 ![PAD7RAR-MVP panel](media/panel-en.png)
@@ -95,7 +95,9 @@ Follow the [bilingual installation guide](../README.txt). Preserve settings and 
 
 The distribution does not include the plugin's C# source. Presentation images and RO/EN videos are in `docs/media/`; the full website media collection is kept separately.
 
-## Version 0.3.2
+## Version 0.3.3
+
+**Configuration path fix:** handles game directories already ending in `csgo`. Run `css_mvpconfig_status` in the server console to inspect the active configuration. [Update instructions](UPDATE-0.3.3.txt).
 
 Fix for overlapping native CS2 music and custom MVP playback. [Update instructions](UPDATE-0.3.2.txt).
 

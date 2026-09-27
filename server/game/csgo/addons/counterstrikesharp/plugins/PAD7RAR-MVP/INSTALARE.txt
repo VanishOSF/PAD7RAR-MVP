@@ -1,4 +1,4 @@
-PAD7RAR-MVP 0.3.2 / PAD7RAR-MVP
+PAD7RAR-MVP 0.3.3 / PAD7RAR-MVP
 RO: Instalează în game/csgo/addons/counterstrikesharp/plugins/PAD7RAR-MVP.
 Păstrează configurația și datele existente. Repornește serverul.
 nyrium.json este lângă DLL. Resursele client se distribuie separat prin Workshop.
