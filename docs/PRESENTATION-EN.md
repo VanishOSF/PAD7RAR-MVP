@@ -6,6 +6,12 @@ Custom MVP music, animated portraits and an interactive in-game panel for Counte
 **Version 0.3.2 · By pad7rar**  
 [GitHub](https://github.com/VanishOSF/PAD7RAR-MVP) · [Discord](https://discord.gg/FmGBPWTkDP) · [Română](../README.md)
 
+![PAD7RAR-MVP panel](media/panel-en.png)
+
+**Video presentation with music:** [English](media/PAD7RAR-MVP-EN-music.mp4) · [Română](media/PAD7RAR-MVP-RO-music.mp4)
+
+*Interface presentation; this is not recorded gameplay.*
+
 ## Give every MVP a personal identity
 
 Open **`!mvp`**, choose a song, equip an animated portrait and make your next MVP moment your own. Music and GIF selections are independent, so players can combine their preferred anthem with their chosen animation.
@@ -85,7 +91,7 @@ Follow the [bilingual installation guide](../README.txt). Preserve settings and 
 | `examples/` | Example server configuration. |
 | `docs/` | Presentation and update instructions. |
 
-The distribution does not include the plugin's C# source. Website promotional media is kept outside this repository.
+The distribution does not include the plugin's C# source. Presentation images and RO/EN videos are in `docs/media/`; the full website media collection is kept separately.
 
 ## Version 0.3.2
 

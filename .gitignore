@@ -46,3 +46,5 @@ desktop.ini
 /media/
 /PAD7RAR-SITE-MEDIA/
 *.mp4
+!/docs/media/PAD7RAR-MVP-RO-music.mp4
+!/docs/media/PAD7RAR-MVP-EN-music.mp4

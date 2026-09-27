@@ -6,6 +6,12 @@ Muzică MVP, portrete animate și un panou interactiv pentru Counter-Strike 2.
 **Versiune: 0.3.2** · **By pad7rar**  
 [GitHub](https://github.com/VanishOSF/PAD7RAR-MVP) · [Discord](https://discord.gg/FmGBPWTkDP) · [English](docs/PRESENTATION-EN.md)
 
+![Panoul PAD7RAR-MVP](docs/media/panel-ro.png)
+
+**Prezentare video cu muzică:** [Română](docs/media/PAD7RAR-MVP-RO-music.mp4) · [English](docs/media/PAD7RAR-MVP-EN-music.mp4)
+
+*Prezentare a interfeței; materialul nu este o înregistrare din joc.*
+
 ## Fiecare MVP poate avea propria identitate
 
 PAD7RAR-MVP le permite jucătorilor să aleagă melodia care se aude când câștigă MVP-ul rundei și animația care îi însoțește în banner. Selecțiile se fac dintr-un panou nativ în joc, deschis cu **`!mvp`**.
@@ -94,7 +100,7 @@ Urmează [ghidul bilingv de instalare](README.txt). La actualizare, păstrează 
 | `examples/` | Configurație exemplu pentru administrator. |
 | `docs/` | Prezentare în engleză și instrucțiuni de actualizare. |
 
-Pachetul nu include sursa C# a pluginului. Materialele promoționale pentru site sunt păstrate separat de repository.
+Pachetul nu include sursa C# a pluginului. Imaginea de prezentare și videoclipurile RO/EN sunt în `docs/media/`; colecția completă pentru site este păstrată separat.
 
 ## Versiunea 0.3.2
 
