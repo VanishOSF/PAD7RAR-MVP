@@ -1,0 +1,55 @@
+[Settings]
+MenuType = "screen"
+DefaultVolume = 0.25
+GiveRandomMVP = false
+DisablePlayerDefaultMVP = true
+SoundEventFiles = ["soundevents/pad7rar_mvp.vsndevts"]
+VolumeSettings = [0, 5, 10, 25, 50, 100]
+DiagnosticLogging = false
+
+[Commands]
+MVPCommands = ["mvp"]
+VolumeCommands = ["mvpvol", "vol"]
+
+[Timer]
+CenterHtmlDuration = 10.0
+CenterDuration = 10.0
+AlertDuration = 10.0
+
+[MVPSettings."PUBLIC MVP"."pad7rar.dedesc"]
+MVPName = "dedesc"
+MVPSound = "PAD7RAR.MVP.dedesc"
+EnablePreview = true
+ShowChatMessage = true
+ShowCenterMessage = false
+ShowAlertMessage = false
+ShowHtmlMessage = true
+SteamID = ""
+Flags = []
+
+
+[MVPSettings."PUBLIC MVP"."pad7rar.ban"]
+MVPName = "ban"
+MVPSound = "PAD7RAR.MVP.ban"
+EnablePreview = true
+ShowChatMessage = true
+ShowCenterMessage = false
+ShowAlertMessage = false
+ShowHtmlMessage = true
+SteamID = ""
+Flags = []
+
+
+[MVPSettings."PREMIUM"."pad7rar.cloxy"]
+MVPName = "cloxy"
+MVPSound = "PAD7RAR.MVP.cloxy"
+EnablePreview = true
+ShowChatMessage = true
+ShowCenterMessage = false
+ShowAlertMessage = false
+ShowHtmlMessage = true
+SteamID = ""
+Flags = ["@pad7rar/premium"]
+
+
+

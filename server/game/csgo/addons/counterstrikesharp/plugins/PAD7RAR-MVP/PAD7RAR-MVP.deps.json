@@ -1,0 +1,71 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "PAD7RAR-MVP/0.3.2": {
+        "dependencies": {
+          "CS2ScreenMenuAPI": "3.0.4",
+          "Tomlyn": "0.19.0",
+          "ClientprefsApi": "1.0.0.0"
+        },
+        "runtime": {
+          "PAD7RAR-MVP.dll": {}
+        }
+      },
+      "CS2ScreenMenuAPI/3.0.4": {
+        "runtime": {
+          "lib/netstandard2.0/CS2ScreenMenuAPI.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Tomlyn/0.19.0": {
+        "runtime": {
+          "lib/net8.0/Tomlyn.dll": {
+            "assemblyVersion": "0.19.0.0",
+            "fileVersion": "0.19.0.0"
+          }
+        }
+      },
+      "ClientprefsApi/1.0.0.0": {
+        "runtime": {
+          "ClientprefsApi.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PAD7RAR-MVP/0.3.2": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CS2ScreenMenuAPI/3.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YfwSWASwOnklSGQAPH3DacGl8Dx/CAX+TeFx69OIAVGF8wa9jGkTqX4p6WKmBK3IH5sbx8Q0MjXsZsnJw1XGJw==",
+      "path": "cs2screenmenuapi/3.0.4",
+      "hashPath": "cs2screenmenuapi.3.0.4.nupkg.sha512"
+    },
+    "Tomlyn/0.19.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GlI2o8R8jbZIaE+YX6uA/VoAOH7zIxYeqxDm7jHW2hqUhuB+q19oKold35FkMuv8IZDoCqsTMolaBv2eBLBmrQ==",
+      "path": "tomlyn/0.19.0",
+      "hashPath": "tomlyn.0.19.0.nupkg.sha512"
+    },
+    "ClientprefsApi/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,28 @@
+PAD7RAR-MVP 0.3.2 - AUDIO
+
+ROMANA
+Opreste muzica nativa deja pornita la finalul rundei, inainte de melodia MVP
+personalizata. Pastreaza nomusic=1 pe evenimentul MVP. Oprirea este trimisa
+si jucatorilor cu volumul MVP 0% sau muzica MVP dezactivata.
+
+1. Opreste serverul si pastreaza o copie a DLL-ului vechi in afara plugins.
+2. In plugins/PAD7RAR-MVP inlocuieste PAD7RAR-MVP.dll si PAD7RAR-MVP.deps.json
+   cu fisierele din acest pachet. Nu inlocui configuratiile sau datele jucatorilor.
+3. In configuratia activa Settings, DisablePlayerDefaultMVP trebuie sa fie true.
+4. Porneste serverul. Versiunea afisata trebuie sa fie 0.3.2.
+Nu necesita actualizare Workshop sau fisiere noi la clienti.
+
+Verificare in joc: echipeaza un music kit CS2 si o melodie custom, castiga MVP
+si verifica lipsa suprapunerii. Repeta la volum 0% si verifica linistea.
+Compilarea, incarcarea .NET si testele de ordine audio au trecut local.
+Rezultatul auditiv pe server trebuie confirmat in joc.
+
+ENGLISH
+Stops native end-of-round music before playing the custom MVP song, while
+retaining nomusic=1 on the MVP event. Muted listeners also receive the stop.
+Stop the server, back up the old DLL outside plugins, replace PAD7RAR-MVP.dll
+and PAD7RAR-MVP.deps.json, then restart. Preserve settings and player data.
+Keep Settings.DisablePlayerDefaultMVP=true. Version should report 0.3.2.
+No Workshop update is needed. Local build, .NET load and audio ordering tests
+passed; confirm audibly in game using an equipped CS2 music kit and custom MVP,
+then repeat with custom volume 0%.

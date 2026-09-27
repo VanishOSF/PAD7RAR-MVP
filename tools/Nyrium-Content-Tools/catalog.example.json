@@ -1,0 +1,8 @@
+{
+  "Songs": [
+    { "Id": "custom_intro", "Name": "My MVP", "File": "input/intro.mp3", "Premium": false, "Preview": true, "SteamIDs": [], "Flags": [] }
+  ],
+  "Gifs": [
+    { "Id": "custom_applause", "Name": "My applause", "File": "input/applause.gif", "Premium": true, "SteamIDs": [], "Flags": ["@pad7rar/premium"] }
+  ]
+}

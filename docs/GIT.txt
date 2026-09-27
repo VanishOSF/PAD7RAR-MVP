@@ -1,0 +1,20 @@
+PREGĂTIRE GIT / GIT PREPARATION
+
+RO
+Acest folder este rădăcina repository-ului local.
+Încarcă NUMAI conținutul acestui folder, nu folderul părinte.
+Sursele, build-urile și copiile istorice sunt păstrate separat în LOCAL-PRIVATE.
+.gitignore exclude sursa C#, proiectele, datele, logurile și build-urile locale.
+Utilitarul este distribuit ca Nyrium-Content-Tools.exe; sursele rămân private.
+Repository public: https://github.com/VanishOSF/PAD7RAR-MVP
+README.txt include documentația română/engleză.
+
+EN
+This directory is the local repository root.
+Upload ONLY this directory's contents, not its parent directory.
+Source, builds and historical copies are stored separately in LOCAL-PRIVATE.
+.gitignore excludes C# source/projects, private data, logs and local builds.
+The utility is distributed as Nyrium-Content-Tools.exe; source remains private.
+Public repository: https://github.com/VanishOSF/PAD7RAR-MVP
+README.txt contains Romanian and English documentation.
+

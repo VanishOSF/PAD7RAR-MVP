@@ -1,0 +1,23 @@
+{
+  "PAD7RAR.MVP.dedesc": {
+    "10": "PAD7RAR.MVP.dedesc.v10",
+    "25": "PAD7RAR.MVP.dedesc.v25",
+    "50": "PAD7RAR.MVP.dedesc.v50",
+    "100": "PAD7RAR.MVP.dedesc.v100",
+    "5": "PAD7RAR.MVP.dedesc.v5"
+  },
+  "PAD7RAR.MVP.ban": {
+    "10": "PAD7RAR.MVP.ban.v10",
+    "25": "PAD7RAR.MVP.ban.v25",
+    "50": "PAD7RAR.MVP.ban.v50",
+    "100": "PAD7RAR.MVP.ban.v100",
+    "5": "PAD7RAR.MVP.ban.v5"
+  },
+  "PAD7RAR.MVP.cloxy": {
+    "10": "PAD7RAR.MVP.cloxy.v10",
+    "25": "PAD7RAR.MVP.cloxy.v25",
+    "50": "PAD7RAR.MVP.cloxy.v50",
+    "100": "PAD7RAR.MVP.cloxy.v100",
+    "5": "PAD7RAR.MVP.cloxy.v5"
+  }
+}
