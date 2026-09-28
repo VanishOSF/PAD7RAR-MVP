@@ -1,36 +1,23 @@
-NYRIUM CONTENT TOOLS 1.0.1 - GHID RAPID
+NYRIUM CONTENT TOOLS 1.0.2
 
-PREGATIRE
-Deschide Nyrium-Content-Tools.exe, adauga MP3/WAV/GIF si apasa Genereaza.
-Selecteaza folderul CS2 care contine game si content; Workshop Tools trebuie instalat.
-GIF-urile se adapteaza automat. Poti seta Premium si accesul dupa SteamID/permisiuni.
+1. Deschide Nyrium-Content-Tools.exe pe Windows cu CS2 Workshop Tools.
+2. Selecteaza radacina CS2 (folderul care contine game si content).
+3. Adauga MP3/WAV/GIF, alege numele si accesul, apoi Genereaza.
+4. Urmeaza START-HERE.txt din rezultatul generat.
 
-PASUL 1 - SERVER
-Opreste serverul.
-Copiaza folderul game din 1-SERVER in /home/container/.
-Combina cu folderele existente, pastrand setarile si datele jucatorilor.
-Pluginul PAD7RAR-MVP trebuie sa fie deja instalat.
+1-SERVER/game/csgo -> game/csgo de pe server, cu serverul oprit.
+2-WORKSHOP -> publicare/re-upload prin CS2 Workshop Tools.
+3-PROJECT -> pastreaza pe PC, impreuna cu fisierele media originale.
+4-SUPPORT -> diagnostic; nu se instaleaza.
 
-PASUL 2 - WORKSHOP
-2-WORKSHOP contine addonul complet cu sunete, variante de volum, panou si GIF-uri.
-Publica acest addon sau actualizeaza addonul tau cu toate resursele generate.
-START-HERE.txt arata exact addonul si calea deja pregatita in instalarea CS2.
-Verifica ce folder impacheteaza Workshop Tools si finalizeaza Publish/Update.
-Seteaza ID-ul publicat in mm_extra_addons, pastrand alte ID-uri necesare.
-Porneste serverul; jucatorii primesc resursele prin Workshop.
+Pluginul DLL trebuie instalat separat, inaintea continutului.
+Ghid unic de instalare: ../../README.txt din acest repository.
 
-NU copiezi manual fisiere in jocul fiecarui jucator.
-Copierea locala nu inseamna publicare pe Steam.
+La actualizari incarca proiectul salvat si pastreaza toate intrarile
+dorite. Catalogul generat inlocuieste catalogul custom anterior.
+Noul addon local de compilare nu obliga la crearea unui item Steam nou.
+Pentru addon comun cu ElitePanel, pastreaza toate resursele ElitePanel.
 
-PASTREAZA PE PC
-3-PROJECT/nyrium-project.json: incarca-l data viitoare, apoi adauga continut nou.
-Pastreaza toate intrarile si fisierele originale pentru fiecare compilare.
-4-SUPPORT: numai loguri si detalii pentru diagnostic; nu se instaleaza.
-Nu urca proiectul sau logurile pe Git/Workshop.
-
-CERINTE
-Windows, .NET Framework 4.5+, Windows PowerShell, CS2 Workshop Tools.
-GIF: 0.1-15 secunde, 50 cadre de 256x256, proportii pastrate.
-Sursele utilitarului raman private; motorul si sabloanele sunt incluse in EXE.
-https://github.com/VanishOSF/PAD7RAR-MVP
-https://discord.gg/FmGBPWTkDP
+1.0.2 schimba generarea bancii audio. Pentru melodiile vechi trebuie
+regenerare si Re-Upload; simpla inlocuire a DLL-ului nu este suficienta.
+Utilitarul nu publica automat Workshop si nu instaleaza serverul.

@@ -1,116 +1,121 @@
 # PAD7RAR-MVP
 
 **Your round. Your signature.**  
-Muzică MVP, portrete animate și un panou interactiv pentru Counter-Strike 2.
+Muzica MVP, portrete animate si panou interactiv pentru Counter-Strike 2.
 
-**Versiune: 0.3.3** · **By pad7rar**  
-[GitHub](https://github.com/VanishOSF/PAD7RAR-MVP) · [Discord](https://discord.gg/FmGBPWTkDP) · [English](docs/PRESENTATION-EN.md)
+**Plugin 0.3.6** | **Nyrium Content Tools 1.0.2** | **By pad7rar**
+
+[Instalare pas cu pas](README.txt) · [English guide](docs/PRESENTATION-EN.md) · [Discord](https://discord.gg/FmGBPWTkDP)
 
 ![Panoul PAD7RAR-MVP](docs/media/panel-ro.png)
 
-**Prezentare video cu muzică:** [Română](docs/media/PAD7RAR-MVP-RO-music.mp4) · [English](docs/media/PAD7RAR-MVP-EN-music.mp4)
+## Incepe aici
 
-![Bannerul MVP personalizat PAD7RAR-MVP](docs/media/mvp-banner-ro.png)
+Acesta este repository-ul de **distributie**, nu folderul unui server.
+Contine pluginul compilat, resursele clientului si utilitarul Windows pentru continut personalizat.
 
-*Prezentare a interfeței; materialul nu este o înregistrare din joc.*
-
-## Fiecare MVP poate avea propria identitate
-
-PAD7RAR-MVP le permite jucătorilor să aleagă melodia care se aude când câștigă MVP-ul rundei și animația care îi însoțește în banner. Selecțiile se fac dintr-un panou nativ în joc, deschis cu **`!mvp`**.
-
-Panoul combină nuanțe de petrol, bordo și auriu cu un titlu caligrafic și un fundal cu aspect pictat. Butoanele, taburile, selecțiile și lista cu derulare sunt interactive. Bannerul de final de rundă folosește un stil separat, inspirat de desenul în creion, cu semnătura **By pad7rar**.
-
-## Ce include
-
-| Funcție | Ce poate face jucătorul sau administratorul |
+| Vrei sa... | Folosesti |
 | --- | --- |
-| Bibliotecă și Premium | Navighează între conținutul public și selecțiile Premium. |
-| Melodii MVP | Alege și echipează o melodie pentru momentele MVP. |
-| GIF-uri | Alege separat portretul animat, independent de melodie. |
-| Preview | Ascultă înainte să echipeze; un preview audio nou îl oprește pe cel anterior. |
-| Control audio | Activează/dezactivează muzica și alege 0%, 5%, 10%, 25%, 50% sau 100%. |
-| Banner personalizat | Afișează jucătorul MVP, melodia și portretul selectat. |
-| Acces configurabil | Rezervă melodii sau GIF-uri pentru SteamID-uri și permisiuni/grupuri. |
-| Limba individuală | Selectează limba din panou, cu actualizarea imediată a interfeței. |
-| Conținut extensibil | Adaugă melodii și GIF-uri prin catalog și utilitar, fără recompilarea DLL-ului. |
+| Instalezi pluginul pe server | [server/game/csgo/](server/game/csgo/) |
+| Publici interfata, sunetele si imaginile | [workshop/game/csgo_addons/pad7rar_mvp/](workshop/game/csgo_addons/pad7rar_mvp/) |
+| Adaugi MP3/WAV/GIF proprii | [Nyrium Content Tools](tools/Nyrium-Content-Tools/) |
+| Configurezi o instalare noua | [examples/config.toml](examples/config.toml) |
+| Afli toate caile si ordinea instalarii | [README.txt](README.txt) |
 
-### Muzica ta, fără suprapuneri
+**Server si Workshop sunt doua destinatii diferite. DLL-ul nu se publica in Workshop.**
+Copierea pe server nu distribuie singura resursele jucatorilor.
 
-La un MVP custom, pluginul oprește muzica nativă de final de rundă înainte de redarea melodiei selectate, cu `DisablePlayerDefaultMVP = true`. Versiunea **0.3.2** include această corecție. Preview-urile audio se înlocuiesc între ele, iar fiecare ascultător are propriul volum.
+## Instalare in 5 pasi
 
-### Premium și conținut personal
+1. Pregateste un server cu Metamod, CounterStrikeSharp compatibil cu .NET 10 / CSS API 1.0.375 si [MultiAddonManager](https://github.com/Source2ZE/MultiAddonManager).
+2. Publica addonul compilat din `workshop/`, sau combina resursele cu addonul tau existent si fa Re-Upload. Pastreaza resursele altor pluginuri din acel addon.
+3. Cu serverul oprit, copiaza **continutul** `server/game/csgo/` peste `game/csgo/` de pe server. La actualizare pastreaza setarile si datele.
+4. **Doar la prima instalare**, copiaza `examples/config.toml` in `game/csgo/addons/counterstrikesharp/configs/plugins/PAD7RAR-MVP/config.toml`. Configureaza ID-ul publicat in `mm_extra_addons`, in configuratia MultiAddonManager.
+5. Porneste serverul, verifica descarcarea/montarea addonului si testeaza `!mvp`, preview-ul, GIF-ul si `!mvpbanner`.
 
-Poți crea o bibliotecă publică, o colecție Premium sau selecții private pentru anumiți jucători. Melodia și GIF-ul se echipează independent: un jucător poate combina melodia preferată cu portretul animat ales.
+[Ghidul complet](README.txt) explica si publicarea pe acelasi item, continutul custom, actualizarile si depanarea.
+Nyrium si Workshop Tools se folosesc pe PC-ul administratorului, nu pe serverul Linux.
 
-Premium reprezintă un nivel de acces configurabil. Pluginul nu include procesarea plăților sau un magazin automat.
+## Ce copiezi, exact?
 
-### Nouă limbi
-
-**Română, engleză, rusă, germană, maghiară, spaniolă, portugheză, sârbă și macedoneană.**
-
-Jucătorul își alege limba din panou. Alegerea este salvată după SteamID și interfața se actualizează imediat. Până la alegerea manuală se folosește limba disponibilă prin CounterStrikeSharp; limba clientului Steam nu este detectată automat. Numele melodiilor și GIF-urilor introduse de administrator rămân cele din catalog.
-
-## Pentru jucători
-
-1. Scrie **`!mvp`** în chat.
-2. Intră în **Bibliotecă** sau **Premium**.
-3. Ascultă un preview și echipează melodia.
-4. În secțiunea GIF-uri, alege separat animația.
-5. Reglează volumul și limba. La următorul MVP se folosește selecția ta.
-
-| Comandă | Rol |
+| Din repository | Destinatia pe server |
 | --- | --- |
-| `!mvp` | Deschide panoul principal. |
-| `!mvpclose` | Închide panoul. |
-| `!mvpvol` | Deschide meniul de volum. |
-| `!mvplang ro` | Selectează limba; coduri: en, ro, ru, de, hu, es, pt, sr, mk. |
-| `!mvpbanner` | Testează bannerul selecției curente. |
+| `server/game/csgo/addons/counterstrikesharp/plugins/PAD7RAR-MVP/` | `game/csgo/addons/counterstrikesharp/plugins/PAD7RAR-MVP/` |
+| `server/game/csgo/addons/counterstrikesharp/shared/ClientprefsApi/` | `game/csgo/addons/counterstrikesharp/shared/ClientprefsApi/` |
+| `server/game/csgo/panorama/` | `game/csgo/panorama/` |
+| `server/game/csgo/sounds/` | `game/csgo/sounds/` |
+| `server/game/csgo/soundevents/` | `game/csgo/soundevents/` |
 
-## Adaugi conținut fără sursa pluginului
+Pe Pterodactyl, prefixul uzual este `/home/container/`; alte gazduiri pot avea alta radacina.
+Combina directoarele, fara sa creezi accidental `game/csgo/game/csgo`.
 
-**Nyrium Content Tools** pregătește melodii **MP3/WAV** și animații **GIF** pentru CS2.
+`nyrium.json` ramane langa DLL. Catalogul custom generat de Nyrium se instaleaza in
+`plugins/PAD7RAR-MVP/content/nyrium-custom.json`.
+MP3-urile si GIF-urile originale nu se copiaza manual in plugin.
 
-1. Pui fișierele în `input/` și deschizi **Nyrium-Content-Tools.exe**, sau le tragi direct în aplicație. Alegi numele, accesul public/Premium, SteamID-urile și permisiunile.
-2. Selectezi instalarea CS2 și apeși **Generează**. GIF-urile sunt redimensionate automat pentru plugin. Poți salva și reîncărca proiectul pentru actualizări viitoare.
-3. Copiezi catalogul și resursele generate pe server.
-4. Publici sau actualizezi addonul Workshop și configurezi ID-ul în MultiAddonManager.
+## Continut personalizat
 
-Jucătorii primesc resursele prin addonul Workshop configurat. Folderul `nyrium/` din plugin nu descarcă singur fișierele pe clienți. Publicarea în Workshop este un pas separat, nu o funcție automată a utilitarului.
+Deschide **Nyrium-Content-Tools.exe**, adauga MP3/WAV/GIF, seteaza accesul si apasa **Genereaza**.
+Utilitarul produce:
 
-Păstrează toate intrările custom în catalog la reconstruire. GIF-urile sunt convertite într-un atlas de 50 de cadre, la 256×256 px pe cadru; recomandăm animații scurte, pătrate, cu subiect clar.
-
-[Ghid complet în română](tools/Nyrium-Content-Tools/CUM-ADAUGI-CONTINUT.txt) · [English content guide](tools/Nyrium-Content-Tools/README-English.txt)
-
-## Instalare și cerințe
-
-- Server CS2 cu Metamod și CounterStrikeSharp; build-ul este pentru **.NET 10 / CSS API 1.0.375**.
-- **MultiAddonManager** și un addon Workshop configurat pentru resursele clientului.
-- `ClientprefsApi.dll` este inclus în pachet; pluginul **Clientprefs** se instalează separat pentru persistența volumului.
-- Pentru pregătirea conținutului: **Windows, PowerShell și CS2 Workshop Tools**.
-
-Limba și GIF-ul se salvează local, după SteamID, fără bază de date. Volumul se aplică imediat, iar salvarea lui între sesiuni folosește Clientprefs.
-
-Urmează [ghidul bilingv de instalare](README.txt). La actualizare, păstrează configurațiile și datele jucătorilor. Folosește folderul și DLL-ul **PAD7RAR-MVP** și evită încărcarea simultană a unei versiuni vechi.
-
-## Conținutul pachetului
-
-| Folder | Conținut |
+| Rezultat | Destinatie |
 | --- | --- |
-| `server/` | Plugin compilat, dependențe și resurse. |
-| `workshop/` | Resurse compilate pentru addonul clientului. |
-| `tools/` | Aplicația Windows Nyrium Content Tools, exemplu de catalog și ghiduri. |
-| `examples/` | Configurație exemplu pentru administrator. |
-| `docs/` | Prezentare în engleză și instrucțiuni de actualizare. |
+| `1-SERVER/game/csgo/` | Se combina cu `game/csgo/` de pe server; pluginul trebuie instalat deja. |
+| `2-WORKSHOP/` | Resurse compilate pentru publicare prin Workshop Tools. |
+| `3-PROJECT/` | Ramane pe PC impreuna cu fisierele originale, pentru actualizari. |
+| `4-SUPPORT/` | Loguri de diagnostic, nu fisiere de instalare. |
 
-Pachetul nu include sursa C# a pluginului. Imaginea de prezentare și videoclipurile RO/EN sunt în `docs/media/`; colecția completă pentru site este păstrată separat.
+La reconstruire pastreaza toate intrarile dorite in proiect. Catalogul nu se adauga automat peste cel vechi.
+Un addon local nou de compilare **nu inseamna** ca trebuie creat un item Workshop nou.
+Nu monta simultan addonuri care contin versiuni diferite ale acelorasi resurse MVP.
 
-## Versiunea 0.3.2
+## Functii
 
-**Actualizare 0.3.3:** corectează calea configurației pe instalări unde directorul jocului include deja `csgo`. Comanda de consolă `css_mvpconfig_status` arată fișierul folosit. [Instrucțiuni](docs/UPDATE-0.3.3.txt).
+- Biblioteca publica si continut Premium, cu acces prin permisiuni sau SteamID.
+- Selectie independenta a melodiei si portretului animat.
+- Preview audio, volum individual si banner personalizat la MVP.
+- Preferinte locale dupa SteamID si integrare optionala Clientprefs.
+- Interfata in RO, EN, RU, DE, HU, ES, PT, SR si MK.
 
-Corecție pentru suprapunerea muzicii native CS2 cu melodia MVP custom. [Instrucțiuni de actualizare](docs/UPDATE-0.3.2.txt).
+Premium controleaza accesul prin plugin, nu confidentialitatea resurselor descarcate.
+Nu include procesarea platilor.
 
-Compilarea, încărcarea .NET și testele locale au trecut; funcționarea a fost confirmată de proprietar pe serverul său. Descărcarea completă Workshop pe un client fără resurse instalate rămâne de verificat separat.
+![Banner MVP](docs/media/mvp-banner-ro.png)
 
-**PAD7RAR-MVP · By pad7rar**  
-[Comunitate și suport pe Discord](https://discord.gg/FmGBPWTkDP)
+| Comanda | Rol |
+| --- | --- |
+| `!mvp` | Deschide panoul. |
+| `!mvpclose` | Inchide panoul. |
+| `!mvpvol` | Meniu de volum. |
+| `!mvplang ro` | Selecteaza limba. |
+| `!mvpbanner` | Testeaza bannerul selectiei curente. |
+| `css_mvpconfig_status` | Diagnostic pentru calea configuratiei, din consola. |
+
+## Actualizarea 0.3.6
+
+- Elimina crearea anticipata a bannerului la incarcarea hartii; pornirea serverului a fost confirmata de utilizator dupa corectie.
+- Pastreaza corectia pentru configuratii fara sectiunea veche `MVPSettings`.
+- Salveaza local volumul dupa SteamID, inclusiv intre harti.
+- Foloseste aceeasi selectie MVP pentru banner si redarea melodiei.
+- Include Nyrium 1.0.2 si banca standard recompilata pentru noua redare audio.
+
+**Pentru melodii custom vechi, corectia audio necesita regenerare cu Nyrium 1.0.2 si Re-Upload Workshop.**
+Actualizarea DLL-ului nu recompila banca de sunete a clientului.
+Doar corectia DLL 0.3.6 nu necesita Re-Upload.
+
+Verificari locale: compilare si teste automate. Publicarea Workshop si descarcarea pe un client curat
+raman operatii separate de publicarea acestui repository.
+
+## Actualizare fara pierderea datelor
+
+Opreste serverul. Instaleaza dependentele necesare si `.deps.json`, apoi DLL-ul si resursele necesare.
+Pastreaza configurarile existente (`config.toml/config.json`, `banner.json`, `nyrium.json`),
+cataloagele custom, `volume-events.json` personalizat si datele jucatorilor.
+Nu copia exemplul peste configuratia de productie. Reporneste dupa instalare.
+
+[SHA256SUMS.txt](SHA256SUMS.txt) permite verificarea integritatii fisierelor.
+Acest pachet nu include sursa C# privata, credentiale sau date de jucatori.
+
+[Prezentare video RO](docs/media/PAD7RAR-MVP-RO-music.mp4) · [Video EN](docs/media/PAD7RAR-MVP-EN-music.mp4)
+
+Imaginile si videoclipurile sunt materiale de prezentare, nu dovezi de testare live.

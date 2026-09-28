@@ -1,34 +1,23 @@
-NYRIUM CONTENT TOOLS 1.0.1 - QUICK START
+NYRIUM CONTENT TOOLS 1.0.2
 
-PREPARE
-Open Nyrium-Content-Tools.exe, add MP3/WAV/GIF files and click Build.
-Select your CS2 root (containing game and content) with Workshop Tools installed.
-GIFs resize automatically. Set Premium and SteamID/permission access as needed.
+1. Run Nyrium-Content-Tools.exe on Windows with CS2 Workshop Tools.
+2. Select the CS2 root directory containing game and content.
+3. Add MP3/WAV/GIF files, set names and access, then Build.
+4. Follow START-HERE.txt in the generated output.
 
-STEP 1 - SERVER
-Stop the server. Merge 1-SERVER/game into /home/container/game.
-Preserve settings and player data. The PAD7RAR-MVP plugin must already be installed.
+1-SERVER/game/csgo -> merge into the server's game/csgo while stopped.
+2-WORKSHOP -> publish/update through CS2 Workshop Tools.
+3-PROJECT -> keep locally with the original media files.
+4-SUPPORT -> diagnostic logs only; do not install.
 
-STEP 2 - WORKSHOP
-2-WORKSHOP contains the complete addon: sounds, volume events, panel and GIFs.
-Publish it or update your existing addon with all generated resources.
-START-HERE.txt identifies the addon already prepared in your CS2 installation.
-Check the directory selected by Workshop Tools and complete Publish/Update.
-Set its Workshop ID in mm_extra_addons, preserving other required IDs.
-Start the server. Players receive the resources through Workshop.
+Install the plugin DLL separately first.
+Complete English installation guide: ../../docs/PRESENTATION-EN.md
 
-No manual installation in each player's game is required.
-Copying files locally does not publish an update to Steam.
+Load the saved project for later edits and retain all desired entries.
+The generated catalog replaces the previous custom catalog.
+A new local build addon does not require a new Steam Workshop item.
+Preserve ElitePanel assets when updating a shared addon.
 
-KEEP ON YOUR PC
-3-PROJECT/nyrium-project.json: load this next time before adding more content.
-Keep all entries and original media in place for every rebuild.
-4-SUPPORT: logs and technical details for troubleshooting, not installation.
-Do not upload projects or logs to Git/Workshop.
-
-REQUIREMENTS
-Windows, .NET Framework 4.5+, Windows PowerShell and CS2 Workshop Tools.
-GIF duration 0.1-15 seconds; 50 frames at 256x256, preserving aspect ratio.
-Utility source remains private; engine and templates are embedded in the EXE.
-https://github.com/VanishOSF/PAD7RAR-MVP
-https://discord.gg/FmGBPWTkDP
+1.0.2 updates sound-bank generation. Rebuild and republish existing
+custom music to apply the audio fix; updating the DLL alone cannot do it.
+Workshop publication and hosted deployment are not automated.

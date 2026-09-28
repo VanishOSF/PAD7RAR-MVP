@@ -1,107 +1,136 @@
-# PAD7RAR-MVP
+# Installation Guide
 
-**Your round. Your signature.**  
-Custom MVP music, animated portraits and an interactive in-game panel for Counter-Strike 2.
+**PAD7RAR-MVP 0.3.6 / Nyrium Content Tools 1.0.2**
 
-**Version 0.3.3 · By pad7rar**  
-[GitHub](https://github.com/VanishOSF/PAD7RAR-MVP) · [Discord](https://discord.gg/FmGBPWTkDP) · [Română](../README.md)
+[Home](../README.md) · [Romanian guide](../README.txt)
 
-![PAD7RAR-MVP panel](media/panel-en.png)
+## Two Destinations, One Installation
 
-**Video presentation with music:** [English](media/PAD7RAR-MVP-EN-music.mp4) · [Română](media/PAD7RAR-MVP-RO-music.mp4)
+- **Server:** plugin DLL, dependencies, settings, catalog and server assets.
+- **Workshop:** compiled Panorama UI, textures, sound files and sound-event bank.
+- **Your PC only:** Nyrium, saved projects and original MP3/WAV/GIF files.
 
-![PAD7RAR-MVP custom round banner](media/mvp-banner-en.png)
+Uploading files to the server does not publish them to Steam.
+Workshop publication does not install the server plugin.
+Never upload DLLs, credentials, private projects or player data to Workshop.
 
-*Interface presentation; this is not recorded gameplay.*
+## Requirements
 
-## Give every MVP a personal identity
+Use compatible Metamod, CounterStrikeSharp and MultiAddonManager builds.
+This plugin targets .NET 10 and CSS API 1.0.375; do not downgrade a working server blindly.
+Custom content preparation requires Windows and CS2 Workshop Tools.
 
-Open **`!mvp`**, choose a song, equip an animated portrait and make your next MVP moment your own. Music and GIF selections are independent, so players can combine their preferred anthem with their chosen animation.
+ClientprefsApi.dll is included as a shared dependency. It is not the Clientprefs plugin.
+Volume, language and GIF preferences have local persistence; Clientprefs integration is optional.
 
-The native panel uses deep teal, burgundy and gold, a calligraphic title and painted textures. Tabs, buttons, selections and the scrollable list are interactive. A separate pencil-inspired round banner displays the MVP player, selected song and portrait, signed **By pad7rar**.
+## 1. Prepare the Workshop Addon
 
-## Included features
+The standard compiled addon is in:
+`workshop/game/csgo_addons/pad7rar_mvp/`
 
-| Feature | What it provides |
+Copy it to:
+`<CS2>/game/csgo_addons/pad7rar_mvp/`
+
+Create `<CS2>/content/csgo_addons/pad7rar_mvp/` if it is missing.
+Select the addon in CS2 Workshop Tools and publish it, or update your existing item.
+It is a resource addon, not a playable map. It includes compiled assets, not editable plugin source.
+
+For a shared ElitePanel + MVP item, merge these assets with the existing addon and preserve the
+other plugin's files. Do not replace the shared addon with MVP assets alone.
+Avoid mounting conflicting versions of the same MVP resources.
+
+Wait for successful publication and note the numeric Workshop ID.
+
+## 2. Install the Server Plugin
+
+Stop the server. Merge the **contents** of `server/game/csgo/` into the server's `game/csgo/`.
+Do not create `game/csgo/game/csgo/`.
+
+| Files | Final server location |
 | --- | --- |
-| Library and Premium | Public content alongside restricted collections. |
-| Custom MVP songs | Select and equip a song for MVP rounds. |
-| Animated portraits | Choose a GIF independently of the equipped song. |
-| Audio previews | Listen before equipping; a new preview stops the previous one. |
-| Individual volume | Music toggle and 0%, 5%, 10%, 25%, 50% or 100% volume. |
-| Custom round banner | MVP identity, selected song and portrait. |
-| Access rules | Restrict songs and GIFs by SteamID or permissions/groups. |
-| Individual language | Change the panel language with an immediate interface refresh. |
-| Custom content tools | Add songs and GIFs without rebuilding the plugin DLL. |
+| Plugin DLL, deps.json and plugin dependencies | `game/csgo/addons/counterstrikesharp/plugins/PAD7RAR-MVP/` |
+| ClientprefsApi.dll | `game/csgo/addons/counterstrikesharp/shared/ClientprefsApi/` |
+| Panorama assets | `game/csgo/panorama/` |
+| Compiled sounds | `game/csgo/sounds/` |
+| Sound-event bank | `game/csgo/soundevents/` |
 
-With `DisablePlayerDefaultMVP = true`, version **0.3.2** stops native end-of-round music before custom MVP playback. Each listener keeps their own custom volume setting, and audio previews replace one another.
+For Pterodactyl, paths usually begin with `/home/container/`.
 
-Premium is a configurable access tier. Payment processing and an automatic store are not included.
+**New installations only:** copy `examples/config.toml` into
+`game/csgo/addons/counterstrikesharp/configs/plugins/PAD7RAR-MVP/config.toml`.
+The example includes two public songs and one requiring `@pad7rar/premium`.
+Adjust access for your server. If both exist, `config.json` takes precedence over `config.toml`.
+Use `css_mvpconfig_status` in the console to inspect the active configuration path.
 
-## Nine languages
+**Updates:** preserve your configs, banner.json, nyrium.json, customized volume-events.json,
+custom catalogs and player data. Copy required dependencies and deps.json first, then the DLL.
+Do not load an old MVP-Anthem installation alongside PAD7RAR-MVP.
 
-**English, Romanian, Russian, German, Hungarian, Spanish, Portuguese, Serbian and Macedonian.**
+## 3. Configure Downloads and Test
 
-Players select their language in the panel. The choice is saved by SteamID and the interface updates immediately. Before a manual selection, the plugin uses the language available through CounterStrikeSharp; it does not automatically detect the Steam client's language. Administrator-defined song and GIF names are not automatically translated.
+Edit `game/csgo/cfg/multiaddonmanager/multiaddonmanager.cfg`.
+Set `mm_extra_addons` to include the published ID, preserving other required IDs.
+An update to the same item does not require changing its ID.
 
-## Player workflow
+Start the server and verify plugin loading and addon download/mounting.
+Reconnect a client, allow Workshop downloads, and test `!mvp`, audio preview, GIF selection,
+`!mvpbanner`, and playback at an actual round end.
+Do not use manually installed client assets to mask Workshop delivery problems.
 
-1. Type **`!mvp`** in chat.
-2. Browse Library or Premium.
-3. Preview and equip a song.
-4. Choose an animation separately in the GIF section.
-5. Set your volume and language. Your selection is used for your next MVP.
+[MultiAddonManager documentation](https://github.com/Source2ZE/MultiAddonManager)
 
-| Command | Action |
+## 4. Add Your Own Music and GIFs
+
+Open `tools/Nyrium-Content-Tools/Nyrium-Content-Tools.exe`.
+Select the CS2 root directory, add MP3/WAV/GIF files, configure access and click Build.
+
+| Output | Action |
 | --- | --- |
-| `!mvp` | Open the main panel. |
-| `!mvpclose` | Close the panel. |
-| `!mvpvol` | Open the volume menu. |
-| `!mvplang en` | Choose a language: en, ro, ru, de, hu, es, pt, sr, mk. |
-| `!mvpbanner` | Test the current selection's banner. |
+| `1-SERVER/game/csgo/` | Merge into server `game/csgo/` while stopped; plugin installation is required separately. |
+| `2-WORKSHOP/` | Publish/update the compiled addon using Workshop Tools. |
+| `3-PROJECT/nyrium-project.json` | Keep on your PC with the original media for future builds. |
+| `4-SUPPORT/` | Diagnostic logs only. |
 
-## Add content without plugin source
+The generated `START-HERE.txt` identifies the exact addon and local directory.
+The custom catalog belongs in `plugins/PAD7RAR-MVP/content/nyrium-custom.json`.
+`nyrium.json` stays next to the DLL; it is a separate panel setting.
 
-**Nyrium Content Tools** prepares **MP3/WAV songs and GIF animations** for CS2.
+Load the saved project for later edits and retain every entry you want to keep.
+Rebuilding replaces the generated custom catalog, not just individual new entries.
+A new local build addon does not mean you must create a new Workshop item.
+Keep ElitePanel resources if sharing the same item.
 
-Put files in `input/` and open **Nyrium-Content-Tools.exe**, or drag them into the application. Set names and access rules, select your CS2 installation and click **Build**. GIFs are resized automatically. Save and load projects to maintain your collection. Install the generated catalog and assets on the server, publish or update your Workshop addon, and configure its ID in MultiAddonManager.
+Publish the new Workshop assets, stop the server, install matching generated server files,
+then restart. Do not hot-reload sound-bank changes.
 
-Players receive the assets through the configured Workshop addon. The plugin's `nyrium/` folder alone does not distribute files to clients. Workshop publishing is a separate step, not automated by the builder.
+## What Requires Workshop Publication?
 
-Keep all custom entries in the catalog when rebuilding. GIFs are converted into a 50-frame atlas with 256×256-pixel frames; short, square animations with a clear subject work best.
+| Change | Server | Workshop |
+| --- | --- | --- |
+| DLL-only fix | Upload DLL/deps as needed and restart | No |
+| Catalog names/access only, unchanged resource references | Update catalog and restart | No |
+| New/modified songs, GIFs, images, UI or sound bank | Install matching assets/catalog and restart | Yes |
 
-[Full content guide](../tools/Nyrium-Content-Tools/README-English.txt)
+Nyrium 1.0.2 changes audio-bank generation.
+Existing custom music must be rebuilt and republished to receive that fix.
+The new DLL does not modify an old custom sound bank.
 
-## Requirements and installation
+## Troubleshooting
 
-- CS2 server with Metamod and CounterStrikeSharp. This build targets **.NET 10 / CSS API 1.0.375**.
-- **MultiAddonManager** and a configured Workshop addon for client assets.
-- Included `ClientprefsApi.dll`; install the **Clientprefs plugin** separately to persist volume preferences.
-- **Windows, PowerShell and CS2 Workshop Tools** for the content builder.
+- **Plugin command missing:** check plugin loading and server-console errors.
+- **Missing catalog entry:** check the generated catalog and permissions.
+- **Visible song but no audio:** check volume, sound bank and downloaded Workshop version.
+- **Old or missing UI/GIF:** compare the published addon, configured ID and client download.
+- **Download appears stuck:** fully restart CS2, check Steam downloads and capture console errors if it persists.
+- **Crash:** retain the exact log and version; do not delete data or randomly replace all dependencies.
 
-Language and GIF choices are stored locally by SteamID without a database. Volume changes apply immediately; persistence across sessions uses Clientprefs.
+Do not share passwords, Steam server tokens or database credentials in diagnostic logs.
+Premium restricts selection through the plugin, not access to downloaded Workshop files.
 
-Follow the [bilingual installation guide](../README.txt). Preserve settings and player data when upgrading. Use the **PAD7RAR-MVP** folder and DLL, without loading an old installation alongside it.
+## Verification and Scope
 
-## Package layout
+The owner confirmed server startup after the 0.3.6 fix. Compilation and automated checks passed.
+Workshop publication and clean-client downloading are separate checks, not implied by a Git push.
+Use [SHA256SUMS.txt](../SHA256SUMS.txt) to verify file integrity.
 
-| Folder | Contents |
-| --- | --- |
-| `server/` | Compiled plugin, dependencies and resources. |
-| `workshop/` | Compiled client addon resources. |
-| `tools/` | Nyrium Content Tools Windows application, example catalog and guides. |
-| `examples/` | Example server configuration. |
-| `docs/` | Presentation and update instructions. |
-
-The distribution does not include the plugin's C# source. Presentation images and RO/EN videos are in `docs/media/`; the full website media collection is kept separately.
-
-## Version 0.3.3
-
-**Configuration path fix:** handles game directories already ending in `csgo`. Run `css_mvpconfig_status` in the server console to inspect the active configuration. [Update instructions](UPDATE-0.3.3.txt).
-
-Fix for overlapping native CS2 music and custom MVP playback. [Update instructions](UPDATE-0.3.2.txt).
-
-Build, .NET loading and local tests passed. The owner confirmed operation on their server. End-to-end Workshop downloading on a client without preinstalled assets still requires separate verification.
-
-**PAD7RAR-MVP · By pad7rar**  
-[Community and support on Discord](https://discord.gg/FmGBPWTkDP)
+This repository contains compiled distribution files, not private C# source or player data.

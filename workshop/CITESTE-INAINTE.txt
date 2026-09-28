@@ -1,61 +1,21 @@
-PAD7RAR-MVP - RESURSE WORKSHOP - compatibil cu pluginul 0.3.1
+WORKSHOP - NUMAI RESURSE PENTRU JUCATORI
 
-FOLDERUL ADDONULUI:
-game/csgo_addons/pad7rar_mvp/
+Addon standard: game/csgo_addons/pad7rar_mvp/
+Copiaza-l in <CS2>/game/csgo_addons/pad7rar_mvp pe PC.
+Creeaza <CS2>/content/csgo_addons/pad7rar_mvp daca lipseste.
+Selecteaza addonul in CS2 Workshop Tools si publica sau fa Re-Upload.
 
-CONTINE:
-- Panoul premium si bannerul MVP.
-- Portretul animat Aplauze, cu variante alb-negru si sepia.
-- Steagurile celor 9 limbi.
-- Melodiile ban, cloxy si dedesc.
-- Evenimente audio cu volume 5%, 10%, 25%, 50%, 100%.
+Contine Panorama, imagini, sunete si banca audio recompilata.
+Nu este o harta. Nu contine DLL, configuratii de acces sau date private.
+Resursele Workshop pot fi accesate de utilizatorii care le descarca.
 
-NU CONTINE DLL-ul, sursa C#, parole, preferinte sau configuratia de acces.
-Restrictia Premium/SteamID pentru cloxy ramane gestionata de plugin pe server.
-Resursele descarcate din Workshop sunt accesibile local jucatorilor; Premium
-controleaza selectarea/redarea prin plugin, nu confidentialitatea fisierelor.
+La un addon comun ElitePanel + MVP, combina resursele si pastreaza
+celelalte pluginuri. Nu inlocui addonul comun doar cu acest folder.
+Nu monta doua versiuni diferite ale acelorasi resurse MVP.
 
-DACA ACTUALIZEZI ADDONUL WORKSHOP EXISTENT:
-Copiaza continutul game/csgo_addons/pad7rar_mvp in folderul local al addonului
-pe care il publicai deja. Pastreaza identificarea Workshop a acelui addon.
-Publica o actualizare folosind fluxul tau CS2 Workshop Tools.
+Pe server configureaza ID-ul publicat in mm_extra_addons.
+Ghidul complet si ordinea instalarii: ../README.txt
+Verificarea integritatii: ../SHA256SUMS.txt
 
-DACA FOLOSESTI UN ADDON NOU:
-Copiaza game/ si content/ din acest pachet in directorul principal CS2,
-langa game/ si content/ existente. Nu modifica numele folderului panorama.
-Folderul content/csgo_addons/pad7rar_mvp este intentionat gol: acest pachet
-furnizeaza resursele deja compilate din game/csgo_addons/pad7rar_mvp.
-Selecteaza addonul pad7rar_mvp in uneltele Workshop si foloseste functia de publicare.
-Este un addon de resurse, nu o harta jucabila.
-Publicarea nu a fost executata automat. Daca interfata cere VPK sau o harta,
-trimite o captura din uploader pentru pregatirea formatului cerut de acel flux.
-
-PE SERVER DUPA PUBLICARE:
-Actualizeaza pluginul separat; DLL-ul ramane in plugins/PAD7RAR-MVP.
-In game/csgo/cfg/multiaddonmanager/multiaddonmanager.cfg, adauga ID-ul Workshop
-la mm_extra_addons pastrand celelalte ID-uri, separate prin virgula.
-Evita montarea simultana a doua addonuri care furnizeaza versiuni diferite
-ale acelorasi resurse PAD7RAR.
-Configuratia MVP trebuie sa includa:
-SoundEventFiles = ["soundevents/pad7rar_mvp.vsndevts"]
-Foloseste numele logic fara _c in configuratie.
-Pastreaza volume-events.json din plugin si configuratia celor trei melodii.
-Reporneste serverul dupa actualizare.
-
-TEST REAL:
-Foloseste un client fara copiile loose ale acestor resurse pentru a verifica
-descarcarea Workshop. Inchide complet si redeschide CS2 la schimbarea resurselor.
-Testeaza !mvp, cele trei melodii, volumul si GIF-ul.
-Selectia restrictiva trebuie verificata si cu alt SteamID.
-Nu s-a efectuat testul de descarcare pe un client curat.
-
-VERIFICARI LOCALE:
-26 fisiere in addon (25 resurse compilate + addoninfo.txt).
-Verificate caile resurselor si existenta celor 18 evenimente audio.
-Banca audio a fost recompilata cu uneltele CS2.
-SHA256SUMS.txt contine amprentele fisierelor.
-Nu include fisierele acestui ghid/SHA256SUMS in addonul publicat.
-
-Documentatie MultiAddonManager:
-https://github.com/Source2ZE/MultiAddonManager/blob/main/README.md
+Acest repository nu publica automat nimic pe Workshop.
 
