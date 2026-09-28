@@ -1,0 +1,77 @@
+name: Discord release announcement
+
+on:
+  release:
+    types: [published]
+
+permissions: {}
+
+jobs:
+  announce:
+    if: github.repository == 'VanishOSF/PAD7RAR-MVP'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Send release details to Discord
+        shell: pwsh
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $webhook = $env:DISCORD_WEBHOOK_URL
+          if ([string]::IsNullOrWhiteSpace($webhook)) {
+            throw 'Add the DISCORD_WEBHOOK_URL repository secret under Settings > Secrets and variables > Actions.'
+          }
+          $uri = $null
+          if (![Uri]::TryCreate($webhook.Trim(), [UriKind]::Absolute, [ref]$uri) -or
+              $uri.Scheme -ne 'https' -or $uri.Host -notin @('discord.com', 'discordapp.com') -or
+              $uri.AbsolutePath -notmatch '^/api(?:/v\d+)?/webhooks/\d+/[A-Za-z0-9_-]+$' -or
+              $uri.UserInfo -or !$uri.IsDefaultPort) {
+            throw 'DISCORD_WEBHOOK_URL must be a direct Discord webhook URL, without /github.'
+          }
+          $event = Get-Content -LiteralPath $env:GITHUB_EVENT_PATH -Raw | ConvertFrom-Json -AsHashtable
+          $release = $event.release
+          if ($event.action -ne 'published' -or !$release -or $release.draft -or
+              $event.repository.full_name -ne 'VanishOSF/PAD7RAR-MVP') {
+            throw 'Only published releases from VanishOSF/PAD7RAR-MVP are supported.'
+          }
+          function Limit-Text([string]$text, [int]$limit) {
+            if ($text.Length -le $limit) { return $text }
+            return $text.Substring(0, $limit - 3) + '...'
+          }
+          $repoUrl = 'https://github.com/VanishOSF/PAD7RAR-MVP'
+          $releaseUrl = $release.html_url
+          if (!$releaseUrl.StartsWith($repoUrl + '/releases/tag/', [StringComparison]::Ordinal)) {
+            throw 'Unexpected release URL.'
+          }
+          $title = if ($release.name) { $release.name } else { $release.tag_name }
+          $description = if ($release.body) { $release.body } else { 'O versiune noua este disponibila. Vezi detaliile pe GitHub.' }
+          $kind = if ($release.prerelease) { 'Pre-release / versiune de test' } else { 'Release publicat' }
+          $payload = @{
+            username = 'PAD7RAR Updates'
+            allowed_mentions = @{ parse = @() }
+            embeds = @(@{
+              title = Limit-Text ('PAD7RAR-MVP | ' + $title) 256
+              url = $releaseUrl
+              description = Limit-Text $description 3500
+              color = 13082954
+              fields = @(
+                @{ name = 'Versiune'; value = (Limit-Text $release.tag_name 100); inline = $true }
+                @{ name = 'Autor'; value = (Limit-Text $release.author.login 100); inline = $true }
+                @{ name = 'Tip'; value = $kind; inline = $true }
+                @{ name = 'Instalare si descarcare'; value = "[Vezi versiunea]($releaseUrl) | [Ghid de instalare]($repoUrl/blob/main/README.txt)"; inline = $false }
+              )
+              footer = @{ text = 'By pad7rar | PAD7RAR-MVP' }
+              timestamp = $release.published_at
+            })
+          }
+          $target = [UriBuilder]::new($uri)
+          $target.Query = 'wait=true'
+          try {
+            $result = Invoke-RestMethod -Uri $target.Uri -Method Post -ContentType 'application/json; charset=utf-8' -Body ([Text.Encoding]::UTF8.GetBytes(($payload | ConvertTo-Json -Depth 10 -Compress))) -TimeoutSec 30
+          } catch {
+            # Do not log exceptions containing the secret webhook URL.
+            throw 'Discord delivery failed. Check the webhook secret and channel permissions. Before retrying, check whether the message already arrived.'
+          }
+          if (!$result.id) { throw 'Discord did not confirm a message ID; check the channel before retrying.' }
+          Write-Output 'Release announcement delivered to Discord.'
