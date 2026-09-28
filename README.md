@@ -113,7 +113,6 @@ Pastreaza configurarile existente (`config.toml/config.json`, `banner.json`, `ny
 cataloagele custom, `volume-events.json` personalizat si datele jucatorilor.
 Nu copia exemplul peste configuratia de productie. Reporneste dupa instalare.
 
-[SHA256SUMS.txt](SHA256SUMS.txt) permite verificarea integritatii fisierelor.
 Acest pachet nu include sursa C# privata, credentiale sau date de jucatori.
 
 [Prezentare video RO](docs/media/PAD7RAR-MVP-RO-music.mp4) · [Video EN](docs/media/PAD7RAR-MVP-EN-music.mp4)

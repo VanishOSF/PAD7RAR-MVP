@@ -15,7 +15,6 @@ Nu monta doua versiuni diferite ale acelorasi resurse MVP.
 
 Pe server configureaza ID-ul publicat in mm_extra_addons.
 Ghidul complet si ordinea instalarii: ../README.txt
-Verificarea integritatii: ../SHA256SUMS.txt
 
 Acest repository nu publica automat nimic pe Workshop.
 

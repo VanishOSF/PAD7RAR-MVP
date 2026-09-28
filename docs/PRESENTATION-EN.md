@@ -131,6 +131,5 @@ Premium restricts selection through the plugin, not access to downloaded Worksho
 
 The owner confirmed server startup after the 0.3.6 fix. Compilation and automated checks passed.
 Workshop publication and clean-client downloading are separate checks, not implied by a Git push.
-Use [SHA256SUMS.txt](../SHA256SUMS.txt) to verify file integrity.
 
 This repository contains compiled distribution files, not private C# source or player data.
