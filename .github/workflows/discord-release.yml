@@ -45,8 +45,8 @@ jobs:
             throw 'Unexpected release URL.'
           }
           $title = if ($release.name) { $release.name } else { $release.tag_name }
-          $description = if ($release.body) { $release.body } else { 'O versiune noua este disponibila. Vezi detaliile pe GitHub.' }
-          $kind = if ($release.prerelease) { 'Pre-release / versiune de test' } else { 'Release publicat' }
+          $description = if ($release.body) { $release.body } else { 'Versiune noua disponibila / New version available. GitHub: release details.' }
+          $kind = if ($release.prerelease) { 'Versiune de test / Pre-release' } else { 'Versiune publica / Release' }
           $payload = @{
             username = 'PAD7RAR Updates'
             allowed_mentions = @{ parse = @() }
@@ -56,10 +56,10 @@ jobs:
               description = Limit-Text $description 3500
               color = 13082954
               fields = @(
-                @{ name = 'Versiune'; value = (Limit-Text $release.tag_name 100); inline = $true }
-                @{ name = 'Autor'; value = (Limit-Text $release.author.login 100); inline = $true }
-                @{ name = 'Tip'; value = $kind; inline = $true }
-                @{ name = 'Instalare si descarcare'; value = "[Vezi versiunea]($releaseUrl) | [Ghid de instalare]($repoUrl/blob/main/README.txt)"; inline = $false }
+                @{ name = 'Versiune / Version'; value = (Limit-Text $release.tag_name 100); inline = $true }
+                @{ name = 'Autor / Author'; value = (Limit-Text $release.author.login 100); inline = $true }
+                @{ name = 'Tip / Type'; value = $kind; inline = $true }
+                @{ name = 'Instalare / Installation'; value = "[Release]($releaseUrl) | [Ghid RO]($repoUrl/blob/main/README.txt) | [Guide EN]($repoUrl/blob/main/docs/PRESENTATION-EN.md)"; inline = $false }
               )
               footer = @{ text = 'By pad7rar | PAD7RAR-MVP' }
               timestamp = $release.published_at
