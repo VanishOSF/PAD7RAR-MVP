@@ -1,46 +1,34 @@
-NYRIUM CONTENT TOOLS 1.0.0 - By pad7rar
-Windows application for PAD7RAR-MVP 0.3.1 or newer.
+NYRIUM CONTENT TOOLS 1.0.1 - QUICK START
 
-1. Install CS2 and CS2 Workshop Tools on your PC.
-2. Put MP3/WAV/GIF files in input, then open Nyrium-Content-Tools.exe.
-   You can also use Add files or drag files into the list.
-3. Select the CS2 root directory containing game and content.
-4. Review names and IDs. Set Premium and optionally SteamIDs or permissions
-   such as @pad7rar/premium, separated with commas.
-   Preview controls whether a song can be previewed in the plugin.
-5. Choose an output parent folder and click Build.
-6. On success, click Open output and read BUILD-INFO.txt.
+PREPARE
+Open Nyrium-Content-Tools.exe, add MP3/WAV/GIF files and click Build.
+Select your CS2 root (containing game and content) with Workshop Tools installed.
+GIFs resize automatically. Set Premium and SteamID/permission access as needed.
 
-AUTOMATIC GIF RESIZING
-GIFs become 50 frames at 256x256 pixels, packed in a 2048x2048 atlas and
-compiled for CS2. Aspect ratio is preserved; rectangular images may have
-black padding. Accepted duration: 0.1-15 seconds. Short square GIFs work best.
+STEP 1 - SERVER
+Stop the server. Merge 1-SERVER/game into /home/container/game.
+Preserve settings and player data. The PAD7RAR-MVP plugin must already be installed.
 
-OUTPUT
-server/plugins/PAD7RAR-MVP -> server game/csgo/addons/counterstrikesharp/plugins/PAD7RAR-MVP
-server/game/csgo           -> server game/csgo
-client/game/csgo           -> assets for local testing
-BUILD-INFO.txt             -> compiled addon path for Workshop Tools
-nyrium-project.json       -> reusable project (not a server content catalog)
-logs/                     -> compiler logs
+STEP 2 - WORKSHOP
+2-WORKSHOP contains the complete addon: sounds, volume events, panel and GIFs.
+Publish it or update your existing addon with all generated resources.
+START-HERE.txt identifies the addon already prepared in your CS2 installation.
+Check the directory selected by Workshop Tools and complete Publish/Update.
+Set its Workshop ID in mm_extra_addons, preserving other required IDs.
+Start the server. Players receive the resources through Workshop.
 
-Workshop publishing is a separate step. Publish/update your addon and set
-its ID in MultiAddonManager. The application does not upload to Steam.
-Preserve player data and server settings. Restart after updating assets.
+No manual installation in each player's game is required.
+Copying files locally does not publish an update to Steam.
 
-ADDING MORE CONTENT
-Load your previous project before adding new files. Keep ALL custom entries
-in every build; building only the new item replaces the custom collection.
-Save project also works before compilation. Project files reference original
-media paths: keep the original files in place. Each build gets a new folder.
-Keep your personal projects and media outside the public repository.
+KEEP ON YOUR PC
+3-PROJECT/nyrium-project.json: load this next time before adding more content.
+Keep all entries and original media in place for every rebuild.
+4-SUPPORT: logs and technical details for troubleshooting, not installation.
+Do not upload projects or logs to Git/Workshop.
 
 REQUIREMENTS
-Windows with .NET Framework 4.5+ (included in Windows 10/11), Windows PowerShell,
-CS2 and CS2 Workshop Tools. The compiler needs write access to the CS2 addon folders.
-Application source and the build script are not shipped as editable files.
-The conversion engine and templates are embedded and extracted temporarily
-at runtime. Generated addon resources remain available for Workshop use.
-
-GitHub: https://github.com/VanishOSF/PAD7RAR-MVP
-Discord: https://discord.gg/FmGBPWTkDP
+Windows, .NET Framework 4.5+, Windows PowerShell and CS2 Workshop Tools.
+GIF duration 0.1-15 seconds; 50 frames at 256x256, preserving aspect ratio.
+Utility source remains private; engine and templates are embedded in the EXE.
+https://github.com/VanishOSF/PAD7RAR-MVP
+https://discord.gg/FmGBPWTkDP

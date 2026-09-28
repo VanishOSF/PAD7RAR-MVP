@@ -1,51 +1,36 @@
-NYRIUM CONTENT TOOLS 1.0.0 - By pad7rar
-Aplicatie Windows pentru PAD7RAR-MVP 0.3.1 sau mai nou.
+NYRIUM CONTENT TOOLS 1.0.1 - GHID RAPID
 
-1. Instaleaza CS2 si CS2 Workshop Tools pe PC.
-2. Pune MP3/WAV/GIF in folderul input si deschide Nyrium-Content-Tools.exe.
-   Alternativ, foloseste Adauga sau trage fisierele direct in lista.
-3. Selecteaza radacina instalarii CS2 (folderul care contine game si content).
-4. Verifica numele si ID-urile. Poti bifa Premium si introduce SteamID-uri
-   sau permisiuni precum @pad7rar/premium, separate prin virgula.
-   Preview controleaza disponibilitatea preview-ului pentru melodie.
-5. Alege folderul de rezultate si apasa Genereaza.
-6. La succes, apasa Deschide rezultat. Citeste BUILD-INFO.txt.
+PREGATIRE
+Deschide Nyrium-Content-Tools.exe, adauga MP3/WAV/GIF si apasa Genereaza.
+Selecteaza folderul CS2 care contine game si content; Workshop Tools trebuie instalat.
+GIF-urile se adapteaza automat. Poti seta Premium si accesul dupa SteamID/permisiuni.
 
-GIF AUTOMAT
-Nu trebuie redimensionat manual. Utilitarul il transforma in 50 de cadre
-de 256x256 px, impachetate intr-un atlas 2048x2048 si compilate pentru CS2.
-Pastreaza proportiile; imaginile dreptunghiulare pot avea margini negre.
-Durata acceptata: 0.1-15 secunde. Recomandat: GIF patrat de 3-5 secunde.
-Nu prelungeste animatia si nu adauga detalii inexistente in original.
+PASUL 1 - SERVER
+Opreste serverul.
+Copiaza folderul game din 1-SERVER in /home/container/.
+Combina cu folderele existente, pastrand setarile si datele jucatorilor.
+Pluginul PAD7RAR-MVP trebuie sa fie deja instalat.
 
-REZULTAT
-server/plugins/PAD7RAR-MVP -> game/csgo/addons/counterstrikesharp/plugins/PAD7RAR-MVP
-server/game/csgo           -> game/csgo pe server
-client/game/csgo           -> resurse pentru test local
-BUILD-INFO.txt             -> calea addonului compilat pentru Workshop Tools
-nyrium-project.json       -> proiect reutilizabil (nu copia in content/ pe server)
-logs/                     -> jurnalele compilarii
+PASUL 2 - WORKSHOP
+2-WORKSHOP contine addonul complet cu sunete, variante de volum, panou si GIF-uri.
+Publica acest addon sau actualizeaza addonul tau cu toate resursele generate.
+START-HERE.txt arata exact addonul si calea deja pregatita in instalarea CS2.
+Verifica ce folder impacheteaza Workshop Tools si finalizeaza Publish/Update.
+Seteaza ID-ul publicat in mm_extra_addons, pastrand alte ID-uri necesare.
+Porneste serverul; jucatorii primesc resursele prin Workshop.
 
-Publicarea sau actualizarea Workshop este separata. Configureaza ID-ul
-addonului in MultiAddonManager. Aplicatia nu publica automat pe Steam.
-Pastreaza datele jucatorilor si configuratiile serverului. Repornieste serverul
-dupa instalarea resurselor. Actualizeaza addonul folosit de jucatori.
+NU copiezi manual fisiere in jocul fiecarui jucator.
+Copierea locala nu inseamna publicare pe Steam.
 
-ACTUALIZARI DE CONTINUT
-Incarca proiectul anterior cu Incarca / Load project, apoi adauga fisierele noi.
-Pastreaza TOATE intrarile custom la fiecare generare; nu genera numai melodia noua.
-Poti salva proiectul inainte de compilare cu Salveaza / Save project.
-Proiectul pastreaza caile catre fisierele originale: nu le sterge sau muta.
-Fiecare compilare are un folder nou si nu suprascrie compilari precedente.
-Pastreaza proiectele si fisierele tale separat de repository-ul public.
+PASTREAZA PE PC
+3-PROJECT/nyrium-project.json: incarca-l data viitoare, apoi adauga continut nou.
+Pastreaza toate intrarile si fisierele originale pentru fiecare compilare.
+4-SUPPORT: numai loguri si detalii pentru diagnostic; nu se instaleaza.
+Nu urca proiectul sau logurile pe Git/Workshop.
 
 CERINTE
-Windows cu .NET Framework 4.5+ (inclus in Windows 10/11), Windows PowerShell,
-CS2 si CS2 Workshop Tools. Compilarea necesita acces de scriere la directoarele
-content/csgo_addons si game/csgo_addons din instalarea CS2.
-Sursa aplicatiei si scriptul de compilare nu sunt livrate ca fisiere editabile.
-Motorul de conversie si sabloanele sunt incluse in executabil; se extrag
-temporar la rulare. Resursele addonului generate raman disponibile pentru Workshop.
-
-GitHub: https://github.com/VanishOSF/PAD7RAR-MVP
-Discord: https://discord.gg/FmGBPWTkDP
+Windows, .NET Framework 4.5+, Windows PowerShell, CS2 Workshop Tools.
+GIF: 0.1-15 secunde, 50 cadre de 256x256, proportii pastrate.
+Sursele utilitarului raman private; motorul si sabloanele sunt incluse in EXE.
+https://github.com/VanishOSF/PAD7RAR-MVP
+https://discord.gg/FmGBPWTkDP
