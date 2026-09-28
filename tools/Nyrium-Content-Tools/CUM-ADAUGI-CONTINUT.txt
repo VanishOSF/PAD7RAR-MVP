@@ -1,23 +1,12 @@
-NYRIUM CONTENT TOOLS 1.0.2
+NYRIUM CONTENT TOOLS 1.0.6
 
-1. Deschide Nyrium-Content-Tools.exe pe Windows cu CS2 Workshop Tools.
-2. Selecteaza radacina CS2 (folderul care contine game si content).
-3. Adauga MP3/WAV/GIF, alege numele si accesul, apoi Genereaza.
-4. Urmeaza START-HERE.txt din rezultatul generat.
-
-1-SERVER/game/csgo -> game/csgo de pe server, cu serverul oprit.
-2-WORKSHOP -> publicare/re-upload prin CS2 Workshop Tools.
-3-PROJECT -> pastreaza pe PC, impreuna cu fisierele media originale.
-4-SUPPORT -> diagnostic; nu se instaleaza.
-
-Pluginul DLL trebuie instalat separat, inaintea continutului.
-Ghid unic de instalare: ../../README.txt din acest repository.
-
-La actualizari incarca proiectul salvat si pastreaza toate intrarile
-dorite. Catalogul generat inlocuieste catalogul custom anterior.
-Noul addon local de compilare nu obliga la crearea unui item Steam nou.
-Pentru addon comun cu ElitePanel, pastreaza toate resursele ElitePanel.
-
-1.0.2 schimba generarea bancii audio. Pentru melodiile vechi trebuie
-regenerare si Re-Upload; simpla inlocuire a DLL-ului nu este suficienta.
-Utilitarul nu publica automat Workshop si nu instaleaza serverul.
+Inchide CS2 si Workshop Tools, deschide Nyrium, adauga MP3/WAV/GIF.
+Genereaza -> publica/Re-Upload nyrium_global -> urca nyrium-custom.json in:
+game/csgo/addons/counterstrikesharp/plugins/PAD7RAR-MVP/content/
+ID-ul Workshop trebuie in mm_extra_addons. Reporneste serverul.
+Nu copiezi separat sounds/soundevents/panorama.
+Pastreaza nyrium-project.json si media originale pe PC.
+Pastreaza toate intrarile la regenerare: catalogul este inlocuit.
+Addonul comun este reutilizat; resursele altor pluginuri sunt pastrate.
+Nu publica automat si nu instaleaza ElitePanel.
+Ghid complet: ../../README.txt

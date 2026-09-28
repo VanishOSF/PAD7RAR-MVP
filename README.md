@@ -3,7 +3,7 @@
 **Your round. Your signature.**  
 Muzica MVP, portrete animate si panou interactiv pentru Counter-Strike 2.
 
-**Plugin 0.3.6** | **Nyrium Content Tools 1.0.2** | **By pad7rar**
+**Plugin 0.3.9** | **Nyrium Content Tools 1.0.6** | **By pad7rar**
 
 [Instalare pas cu pas](README.txt) · [English guide](docs/PRESENTATION-EN.md) · [Discord](https://discord.gg/FmGBPWTkDP)
 
@@ -42,9 +42,8 @@ Nyrium si Workshop Tools se folosesc pe PC-ul administratorului, nu pe serverul 
 | --- | --- |
 | `server/game/csgo/addons/counterstrikesharp/plugins/PAD7RAR-MVP/` | `game/csgo/addons/counterstrikesharp/plugins/PAD7RAR-MVP/` |
 | `server/game/csgo/addons/counterstrikesharp/shared/ClientprefsApi/` | `game/csgo/addons/counterstrikesharp/shared/ClientprefsApi/` |
-| `server/game/csgo/panorama/` | `game/csgo/panorama/` |
-| `server/game/csgo/sounds/` | `game/csgo/sounds/` |
-| `server/game/csgo/soundevents/` | `game/csgo/soundevents/` |
+
+Resursele Panorama/audio sunt livrate prin Workshop, nu copiate separat pe server.
 
 Pe Pterodactyl, prefixul uzual este `/home/container/`; alte gazduiri pot avea alta radacina.
 Combina directoarele, fara sa creezi accidental `game/csgo/game/csgo`.
@@ -60,13 +59,17 @@ Utilitarul produce:
 
 | Rezultat | Destinatie |
 | --- | --- |
-| `1-SERVER/game/csgo/` | Se combina cu `game/csgo/` de pe server; pluginul trebuie instalat deja. |
-| `2-WORKSHOP/` | Resurse compilate pentru publicare prin Workshop Tools. |
-| `3-PROJECT/` | Ramane pe PC impreuna cu fisierele originale, pentru actualizari. |
-| `4-SUPPORT/` | Loguri de diagnostic, nu fisiere de instalare. |
+| Addonul indicat la final | Deja pregatit in CS2 Workshop Tools; publica sau fa Re-Upload. |
+| `nyrium-custom.json` | `game/csgo/addons/counterstrikesharp/plugins/PAD7RAR-MVP/content/nyrium-custom.json` |
+| `nyrium-project.json` | Ramane pe PC impreuna cu originalele pentru actualizari. |
+| `.logs/` | Diagnostic local, nu se instaleaza. |
+
+Pentru continutul custom nu copiezi separat sounds/soundevents/Panorama.
+ID-ul trebuie inclus in `mm_extra_addons`, nu doar `mm_client_extra_addons`,
+pentru ca serverul si jucatorii sa monteze acelasi Workshop.
 
 La reconstruire pastreaza toate intrarile dorite in proiect. Catalogul nu se adauga automat peste cel vechi.
-Un addon local nou de compilare **nu inseamna** ca trebuie creat un item Workshop nou.
+Nyrium reutilizeaza addonul local `nyrium_global`; publica actualizarile pe acelasi item Workshop.
 Nu monta simultan addonuri care contin versiuni diferite ale acelorasi resurse MVP.
 
 ## Functii
@@ -91,17 +94,19 @@ Nu include procesarea platilor.
 | `!mvpbanner` | Testeaza bannerul selectiei curente. |
 | `css_mvpconfig_status` | Diagnostic pentru calea configuratiei, din consola. |
 
-## Actualizarea 0.3.6
+## Actualizarea 0.3.9
 
 - Elimina crearea anticipata a bannerului la incarcarea hartii; pornirea serverului a fost confirmata de utilizator dupa corectie.
 - Pastreaza corectia pentru configuratii fara sectiunea veche `MVPSettings`.
 - Salveaza local volumul dupa SteamID, inclusiv intre harti.
 - Foloseste aceeasi selectie MVP pentru banner si redarea melodiei.
-- Include Nyrium 1.0.2 si banca standard recompilata pentru noua redare audio.
+- Random la fiecare MVP pentru jucatorii fara selectie manuala, cu `GiveRandomMVP = true`.
+- Include Nyrium 1.0.6: addon comun reutilizabil si GIF cu decupare centrata, fara benzi de incadrare.
+- 86 de teste lifecycle trecute local.
 
-**Pentru melodii custom vechi, corectia audio necesita regenerare cu Nyrium 1.0.2 si Re-Upload Workshop.**
+**Pentru melodii custom vechi, corectia audio necesita regenerare cu Nyrium si Re-Upload Workshop.**
 Actualizarea DLL-ului nu recompila banca de sunete a clientului.
-Doar corectia DLL 0.3.6 nu necesita Re-Upload.
+Doar actualizarea DLL nu necesita Re-Upload.
 
 Verificari locale: compilare si teste automate. Publicarea Workshop si descarcarea pe un client curat
 raman operatii separate de publicarea acestui repository.

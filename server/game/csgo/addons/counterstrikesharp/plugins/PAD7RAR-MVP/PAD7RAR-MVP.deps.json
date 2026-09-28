@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v10.0": {
-      "PAD7RAR-MVP/0.3.6": {
+      "PAD7RAR-MVP/0.3.9": {
         "dependencies": {
           "CS2ScreenMenuAPI": "3.0.4",
           "Tomlyn": "0.19.0",
@@ -43,7 +43,7 @@
     }
   },
   "libraries": {
-    "PAD7RAR-MVP/0.3.6": {
+    "PAD7RAR-MVP/0.3.9": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,23 +1,12 @@
-NYRIUM CONTENT TOOLS 1.0.2
+NYRIUM CONTENT TOOLS 1.0.6
 
-1. Run Nyrium-Content-Tools.exe on Windows with CS2 Workshop Tools.
-2. Select the CS2 root directory containing game and content.
-3. Add MP3/WAV/GIF files, set names and access, then Build.
-4. Follow START-HERE.txt in the generated output.
-
-1-SERVER/game/csgo -> merge into the server's game/csgo while stopped.
-2-WORKSHOP -> publish/update through CS2 Workshop Tools.
-3-PROJECT -> keep locally with the original media files.
-4-SUPPORT -> diagnostic logs only; do not install.
-
-Install the plugin DLL separately first.
-Complete English installation guide: ../../docs/PRESENTATION-EN.md
-
-Load the saved project for later edits and retain all desired entries.
-The generated catalog replaces the previous custom catalog.
-A new local build addon does not require a new Steam Workshop item.
-Preserve ElitePanel assets when updating a shared addon.
-
-1.0.2 updates sound-bank generation. Rebuild and republish existing
-custom music to apply the audio fix; updating the DLL alone cannot do it.
-Workshop publication and hosted deployment are not automated.
+Close CS2 and Workshop Tools, open Nyrium and add MP3/WAV/GIF.
+Generate -> publish/update nyrium_global -> upload nyrium-custom.json to:
+game/csgo/addons/counterstrikesharp/plugins/PAD7RAR-MVP/content/
+Include the Workshop ID in mm_extra_addons and restart the server.
+No separate sounds/soundevents/panorama upload.
+Keep nyrium-project.json and original media locally.
+Retain all entries when rebuilding: the catalog is replaced.
+The common addon is reused; other plugins' resources are preserved.
+Publication is manual. ElitePanel is not installed by Nyrium.
+Full guide: ../../docs/PRESENTATION-EN.md
