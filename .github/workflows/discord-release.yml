@@ -49,7 +49,8 @@ jobs:
           $kind = if ($release.prerelease) { 'Versiune de test / Pre-release' } else { 'Versiune publica / Release' }
           $payload = @{
             username = 'PAD7RAR Updates'
-            allowed_mentions = @{ parse = @() }
+            content = '@everyone PAD7RAR-MVP: actualizare noua / new update available!'
+            allowed_mentions = @{ parse = @('everyone') }
             embeds = @(@{
               title = Limit-Text ('PAD7RAR-MVP | ' + $title) 256
               url = $releaseUrl

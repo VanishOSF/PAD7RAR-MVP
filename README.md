@@ -3,7 +3,7 @@
 **Your round. Your signature.**  
 Muzica MVP, portrete animate si panou interactiv pentru Counter-Strike 2.
 
-**Plugin 0.3.9** | **Nyrium Content Tools 1.0.6** | **By pad7rar**
+**Plugin 0.4.0** | **Nyrium Content Tools 1.0.7** | **By pad7rar**
 
 [Instalare pas cu pas](README.txt) · [English guide](docs/PRESENTATION-EN.md) · [Discord](https://discord.gg/FmGBPWTkDP)
 
@@ -93,6 +93,16 @@ Nu include procesarea platilor.
 | `!mvplang ro` | Selecteaza limba. |
 | `!mvpbanner` | Testeaza bannerul selectiei curente. |
 | `css_mvpconfig_status` | Diagnostic pentru calea configuratiei, din consola. |
+
+## Actualizarea 0.4.0
+
+- Titlul panelului afiseaza numele jucatorului, separat pentru fiecare utilizator.
+- Corectata validarea CustomHud: eliminat atributul `html` incompatibil din titlu.
+- Ramane o singura varianta de aplauze; selectiile vechi monochrome/sepia folosesc originalul. GIF-urile custom sunt pastrate.
+- Random MVP foloseste doar melodii free cand nu exista o selectie manuala valida, inclusiv cand preferintele din baza de date intarzie. Alegerea temporara nu suprascrie preferintele salvate.
+- Meniul si Random MVP au fost confirmate functional in joc de administrator; 103 verificari automate locale au trecut.
+- Necesita actualizarea DLL + `.deps.json` si Re-Upload al resurselor Workshop din acest repository. Pastrati configuratiile, cataloagele si datele jucatorilor.
+- Nyrium Content Tools ramane 1.0.7; acest update nu schimba utilitarul.
 
 ## Actualizarea 0.3.9
 

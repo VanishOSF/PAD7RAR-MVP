@@ -1,4 +1,8 @@
-PAD7RAR-MVP 0.3.9 / NYRIUM CONTENT TOOLS 1.0.6
+PAD7RAR-MVP 0.4.0 / NYRIUM CONTENT TOOLS 1.0.7
+UPDATE 0.4.0: titlu cu numele jucatorului, corectie validare CustomHud,
+o singura varianta de aplauze si Random MVP doar din melodii free.
+Actualizati DLL + .deps.json si republicati resursele Workshop.
+Pastrati configuratiile si datele jucatorilor. Utilitarul ramane 1.0.7.
 INSTALARE
 
 1. PLUGINUL (o singura data)

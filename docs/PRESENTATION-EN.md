@@ -1,6 +1,16 @@
 # Installation Guide
 
-**PAD7RAR-MVP 0.3.9 / Nyrium Content Tools 1.0.6**
+**PAD7RAR-MVP 0.4.0 / Nyrium Content Tools 1.0.7**
+
+## Update 0.4.0
+
+- Personalized panel title displaying each viewer's player name.
+- Fixed CustomHud rejection caused by an unsupported title attribute.
+- One built-in applause variant; previous monochrome/sepia choices display the original. Custom GIFs are preserved.
+- Random MVP selects free songs when no valid fixed selection is available, including while database preferences are pending. Temporary choices never overwrite saved selections.
+- Panel and Random MVP confirmed working in game by the server administrator; 103 local regression checks passed.
+- Update the DLL and deps file, then re-upload the compiled Workshop resources to your existing item. Preserve configuration, custom catalogs and player data.
+- Content Tools remains at 1.0.7 and is unchanged by this release.
 
 [Home](../README.md) | [Romanian guide](../README.txt)
 
